@@ -5,7 +5,7 @@ import styles from "../shared/page.module.css";
 import Chat from "../../components/chat";
 import FileViewer from "../../components/file-viewer";
 
-const FileSearchPage = () => {
+const MarketRecPage = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
@@ -22,4 +22,4 @@ const FileSearchPage = () => {
   );
 };
 
-export default FileSearchPage;
+export default MarketRecPage;
