@@ -8,7 +8,7 @@ export const metadata = {
   title: "Silithius",
   description: "Your Best Marketing Recommendations for Your Tech Business",
   icons: {
-    icon: "/openai.svg",
+    icon: "/silithius-logo.png",
   },
 };
 
