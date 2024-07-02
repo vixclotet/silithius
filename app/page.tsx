@@ -104,7 +104,7 @@ export default function Home() {
                       <h3 className="text-xl font-bold">AI-Powered Recommendations</h3>
                       <p className="text-muted-foreground">
                         Our AI engine analyzes your data to provide personalized recommendations for your marketing
-                        campaigns.
+                        campaigns. 
                       </p>
                     </div>
                   </li>
@@ -112,7 +112,7 @@ export default function Home() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Campaign Optimization</h3>
                       <p className="text-muted-foreground">
-                        Optimize your campaigns with real-time performance insights and A/B testing capabilities.
+                        Optimize your campaigns with real-time performance insights and A/B testing capabilities. (Coming Soon...)
                       </p>
                     </div>
                   </li>
@@ -120,7 +120,7 @@ export default function Home() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Comprehensive Reporting</h3>
                       <p className="text-muted-foreground">
-                        Get detailed reports on your marketing performance and ROI to make data-driven decisions.
+                        Get detailed reports on your marketing performance and ROI to make data-driven decisions. (Coming Soon...)
                       </p>
                     </div>
                   </li>
