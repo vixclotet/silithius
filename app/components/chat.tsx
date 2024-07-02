@@ -118,15 +118,12 @@ const Chat = ({
     handleReadableStream(stream);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!userInput.trim()) return;
-    sendMessage(userInput);
+  const handleSubmit = (text) => {
+    sendMessage(text);
     setMessages((prevMessages) => [
       ...prevMessages,
-      { role: "user", text: userInput },
+      { role: "user", text: text },
     ]);
-    setUserInput("");
     setInputDisabled(true);
     scrollToBottom();
   };
@@ -245,37 +242,110 @@ const Chat = ({
       })
       return [...prevMessages.slice(0, -1), updatedLastMessage];
     });
-    
+
   }
+  const ChatComponent = ({ messages, handleSubmit, inputDisabled }) => {
+    const [businessName, setBusinessName] = useState('');
+    const [description, setDescription] = useState('');
+    const [problem, setProblem] = useState('');
+    const [audience, setAudience] = useState('');
+    const [additionalInfo, setAdditionalInfo] = useState('');
+    const messagesEndRef = useRef(null);
+
+    const handleFormSubmit = (e) => {
+      e.preventDefault();
+      const answer = `Your business "${businessName}" is described as "${description}". It solves the problem of "${problem}" and targets the following audience: "${audience}". You provided the following additional information "${audience}"`;
+      handleSubmit(answer);
+      // Clear the form inputs if needed
+      setBusinessName('');
+      setDescription('');
+      setProblem('');
+      setAudience('');
+      setAdditionalInfo('');
+    };
+
+    useEffect(() => {
+      if (messagesEndRef.current) {
+        messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, [messages]);
+
+    return (
+      <div className="flex h-screen">
+        <div className="flex-2 p-10 border-r space-y-16 border-gray-300 overflow-auto">
+          <h2 className="mt-4 text-3xl font-bold">Marketing Strategies for Tech Entrepreneurs</h2>
+          <p className="mt-4 text-m font-bold">Remember: the more specific you are, the better the recommendations!</p>
+          <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4 w-full max-w-lg mx-auto">
+            <div>
+              <label className="block mb-2">What is the name of your business?</label>
+              <input
+                type="text"
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Provide a one-sentence description or one-liner of your business:</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">What problem is your business solving?</label>
+              <input
+                type="text"
+                value={problem}
+                onChange={(e) => setProblem(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Who is your business selling its products to?</label>
+              <input
+                type="text"
+                value={audience}
+                onChange={(e) => setAudience(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Any additional information?</label>
+              <input
+                type="text"
+                value={additionalInfo}
+                onChange={(e) => setAdditionalInfo(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            <button type="submit" className="p-2 bg-black text-white rounded" disabled={inputDisabled}>
+              Send
+            </button>
+          </form>
+        </div>
+        <div className="flex-3 p-10 overflow-auto h-full">
+          <div className="flex flex-col space-y-4 flex-grow">
+            {messages.map((msg, index) => (
+              <div key={index} className="w-full max-w-md mx-auto">
+              <Message key={index} role={msg.role} text={msg.text} />
+              </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <div className={styles.chatContainer}>
-      <div className={styles.messages}>
-        {messages.map((msg, index) => (
-          <Message key={index} role={msg.role} text={msg.text} />
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        className={`${styles.inputForm} ${styles.clearfix}`}
-      >
-        <input
-          type="text"
-          className={styles.input}
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
-          placeholder="Enter your question"
-        />
-        <button
-          type="submit"
-          className={styles.button}
-          disabled={inputDisabled}
-        >
-          Send
-        </button>
-      </form>
-    </div>
+    <ChatComponent
+      messages={messages}
+      handleSubmit={handleSubmit}
+      inputDisabled={inputDisabled}
+    />
   );
 };
 

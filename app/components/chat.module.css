@@ -1,20 +1,45 @@
-.chatContainer {
+.container {
   display: flex;
-  flex-direction: column-reverse;
   height: 100%;
-  width: 100%;
+  /* Ensure the container takes the full viewport height */
+  width: 200%;
+}
+
+.inputContainer {
+  flex: 10;
+  /* Allow the input container to use available space */
+  padding: 10px;
+    border-right: 3px solid #ddd;
+    overflow: auto;
+    /* Allow overflow if content exceeds container */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.chatContainer {
+  flex: 30;
+  /* Allow the chat container to use more available space */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: auto;
+  /* Allow overflow if content exceeds container */
 }
 
 .inputForm {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 10px;
-  padding-bottom: 40px;
-  order: 1;
+  /* Take full width of the input container */
+  max-width: 400px;
+  /* Optional: limit the maximum width */
 }
 
 .input {
-  flex-grow: 1;
+  flex-grow: 5;
   padding: 16px 24px;
   margin-right: 10px;
   border-radius: 60px;
@@ -35,7 +60,7 @@
   color: white;
   border: none;
   font-size: 1em;
-  border-radius: 60px; /* Removed duplicate border-radius property */
+  border-radius: 60px;
 }
 
 .button:disabled {
@@ -48,7 +73,6 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  order: 2;
   white-space: pre-wrap;
 }
 
@@ -57,7 +81,6 @@
 .codeMessage {
   margin: 8px 0;
   padding: 8px 16px;
-  align-self: flex-start;
   border-radius: 15px;
   max-width: 80%;
   overflow-wrap: break-word;
@@ -65,7 +88,7 @@
 
 .assistantMessage img {
   max-width: 100%;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 0px;
   border-radius: 8px;
 }
 
@@ -83,10 +106,9 @@
   padding: 10px 16px;
   background-color: #e9e9e9;
   font-family: monospace;
-  counter-reset: line;
 }
 
-.codeMessage > div {
+.codeMessage>div {
   margin-top: 4px;
 }
 

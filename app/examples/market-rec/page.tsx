@@ -2,9 +2,9 @@
 import React from "react";
 import LeftSidebar from "../../components/LeftSidebar";
 import MiddleSection from "../../components/MiddleSection";
-import { Chat } from "openai/resources"
+import { Chat } from "openai/resources";
 import styles from "../shared/page.module.css";
-import ChatPage from "../../components/chat"
+import ChatPage from "../../components/chat";
 
 const MarketRecPage = () => {
   return (
@@ -13,10 +13,8 @@ const MarketRecPage = () => {
         <div className="w-1/6">
           <LeftSidebar />
         </div>
-        <div className={styles.chatContainer}>
-          <div className={styles.chat}>
+        <div>
             <ChatPage />
-          </div>
         </div>
       </div>
     </main>

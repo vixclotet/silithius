@@ -4,6 +4,7 @@ const BusinessFormWithRecommendations = () => {
     const [businessName, setBusinessName] = useState('');
     const [description, setDescription] = useState('');
     const [problem, setProblem] = useState('');
+    const [audience, setAudience] = useState('');
     const [additionalInfo, setAdditionalInfo] = useState('');
     const [recommendations, setRecommendations] = useState([]);
 
@@ -72,6 +73,15 @@ const BusinessFormWithRecommendations = () => {
                     </div>
                     <div>
                         <label className="block mb-2">Who is your business selling its products to?</label>
+                        <input
+                            type="text"
+                            value={additionalInfo}
+                            onChange={(e) => setAdditionalInfo(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded"
+                        />
+                    </div>
+                    <div>
+                        <label className="block mb-2">Any Additional Information?</label>
                         <input
                             type="text"
                             value={additionalInfo}
