@@ -3,6 +3,7 @@ import "./globals.css";
 import Warnings from "./components/warnings";
 import { assistantId } from "./assistant-config";
 const inter = Inter({ subsets: ["latin"] });
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "Silithius",
