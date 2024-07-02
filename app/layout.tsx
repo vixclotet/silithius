@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Analytics />
         {assistantId ? children : <Warnings />}
         <img className="logo" src="/openai.svg" alt="OpenAI Logo" />
+        <Analytics />
       </body>
     </html>
   );
