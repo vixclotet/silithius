@@ -60,12 +60,22 @@ export default function Home() {
                   </p>
                 </div>
                 <button
-                  className="mt-4 bg-gradient-to-r from-orange-800 to-orange-500 hover:from-blue-500 hover:to-sky-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                  className="mt-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-blue-500 hover:to-sky-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                   type="button"
                   onClick={handleClick}
                 >
-                  Click Here!
+                  Demo Here!
                 </button>
+                <ul className="mt-16 space-y-4">
+                  <div className="flex flex-col items-center">
+                    <h2 className="mt-4 text-xl font-bold">Would you like to unlock full access to Silithius?</h2>
+                  </div>
+                  <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-sky-200 w-64 mx-auto">
+                    <Link href="https://waitforit.me/signup/df364e28" className="text-black block">
+                      Join the wailist!
+                    </Link>
+                  </li>
+                </ul>
               </div>
               <img
                 className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
@@ -110,17 +120,17 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Campaign Optimization</h3>
+                      <h3 className="text-xl font-bold">Campaign Optimization  (Coming Soon...)</h3>
                       <p className="text-muted-foreground">
-                        Optimize your campaigns with real-time performance insights and A/B testing capabilities. (Coming Soon...)
+                        Optimize your campaigns with real-time performance insights and A/B testing capabilities.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Comprehensive Reporting</h3>
+                      <h3 className="text-xl font-bold">Comprehensive Reporting  (Coming Soon...)</h3>
                       <p className="text-muted-foreground">
-                        Get detailed reports on your marketing performance and ROI to make data-driven decisions. (Coming Soon...)
+                        Get detailed reports on your marketing performance and ROI to make data-driven decisions.
                       </p>
                     </div>
                   </li>
