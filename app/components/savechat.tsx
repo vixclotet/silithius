@@ -249,8 +249,8 @@ const Chat = ({
     }
 
     return (
-        <div className={styles.chatContainer}>
-            <div className={styles.messages}>
+        <div className="flex flex-col items-center justify-between h-full w-full bg-gray-100 p-4">
+            <div className="w-full flex-grow overflow-y-auto bg-white rounded-lg shadow-lg p-6 mb-16">
                 {messages.map((msg, index) => (
                     <Message key={index} role={msg.role} text={msg.text} />
                 ))}
@@ -258,11 +258,11 @@ const Chat = ({
             </div>
             <form
                 onSubmit={handleSubmit}
-                className={`${styles.inputForm} ${styles.clearfix}`}
+                className="flex flex-col w-full max-w-[400px]"
             >
                 <input
                     type="text"
-                    className={styles.input}
+                    className="flex-grow p-4 px-6 mr-2.5 rounded-full border-2 border-transparent text-base bg-gray-200 focus:outline-none focus:border-black focus:bg-white"
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     placeholder="Tell me about your business"
@@ -270,7 +270,7 @@ const Chat = ({
 
                 <button
                     type="submit"
-                    className={styles.button}
+                    className="p-2 px-6 bg-black text-white border-none text-base rounded-full disabled:bg-gray-400"
                     disabled={inputDisabled}
                 >
                     Send
@@ -278,6 +278,7 @@ const Chat = ({
             </form>
         </div>
     );
+
 };
 
 export default Chat;

@@ -50,15 +50,15 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center items-center space-y-4 text-center">
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Unlock Your Marketing & Growth Potential as a Tech Entrepreneur
+                    Scale your tech project easily
                   </h1>
                   <p className="text-muted-foreground md:text-xl">
-                    Our AI-powered marketing recommendations tool helps you optimize your campaigns and drive better
-                    results.
+                    Save hours of your busy time planning your next marketing move to grow your business
                   </p>
                 </div>
+                <div className="space-y-24"></div>
                 <button
                   className="mt-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-blue-500 hover:to-sky-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                   type="button"
@@ -71,7 +71,7 @@ export default function Home() {
                     <h2 className="mt-4 text-xl font-bold">Would you like to unlock full access to Silithius?</h2>
                   </div>
                   <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-sky-200 w-64 mx-auto">
-                    <Link href="https://waitforit.me/signup/df364e28" className="text-black block">
+                    <Link href="https://forms.gle/RheqoNfrWo3997rv7" className="text-black block">
                       Join the wailist!
                     </Link>
                   </li>
@@ -92,10 +92,10 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm"></div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Powerful Marketing Insights</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Make Your Next Business Move</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our AI-powered marketing recommendations tool provides actionable insights to help you optimize your
-                  campaigns and drive better results.
+                  campaigns and drive better results and key metrics.
                 </p>
               </div>
             </div>
@@ -120,17 +120,17 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Campaign Optimization  (Coming Soon...)</h3>
+                      <h3 className="text-xl font-bold">Marketing Case Studies</h3>
                       <p className="text-muted-foreground">
-                        Optimize your campaigns with real-time performance insights and A/B testing capabilities.
+                        Read real-world marketing case studies from successful tech entrepreneurs from YC, HBS, and Forbes.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Comprehensive Reporting  (Coming Soon...)</h3>
+                      <h3 className="text-xl font-bold">Direct links to social media apps to start your growth fast</h3>
                       <p className="text-muted-foreground">
-                        Get detailed reports on your marketing performance and ROI to make data-driven decisions.
+                        Get access to your favorite apps to start using and testing your next moves.
                       </p>
                     </div>
                   </li>

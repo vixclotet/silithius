@@ -7,6 +7,9 @@ import Markdown from "react-markdown";
 // @ts-expect-error - no types for this yet
 import { AssistantStreamEvent } from "openai/resources/beta/assistants/assistants";
 import { RequiredActionFunctionToolCall } from "openai/resources/beta/threads/runs/runs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle, faReddit, faWhatsapp, faTwitter, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faCopy as faCopyRegular } from "@fortawesome/free-regular-svg-icons";
 
 type MessageProps = {
   role: "user" | "assistant" | "code";
@@ -17,13 +20,43 @@ const UserMessage = ({ text }: { text: string }) => {
   return <div className={styles.userMessage}>{text}</div>;
 };
 
+/* ASSISTANT COMPONENT */
 const AssistantMessage = ({ text }: { text: string }) => {
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(text);
+    alert("Copied to clipboard");
+  };
+
   return (
-    <div className={styles.assistantMessage}>
-      <Markdown>{text}</Markdown>
+    <div className="p-4 border border-gray-300 rounded">
+      <div>
+        <Markdown>{text}</Markdown>
+      </div>
+      <div className="flex items-center justify-center space-x-4 mt-4">
+        <button onClick={copyToClipboard} className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faCopyRegular} size="2x" />
+        </button>
+        <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faGoogle} size="2x" />
+        </a>
+        <a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faReddit} size="2x" />
+        </a>
+        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
+          <FontAwesomeIcon icon={faFacebook} size="2x" />
+        </a>
+      </div>
     </div>
   );
 };
+
+
 
 const CodeMessage = ({ text }: { text: string }) => {
   return (
@@ -244,24 +277,22 @@ const Chat = ({
     });
 
   }
+
+  /* CHAT COMPONENT */
+
   const ChatComponent = ({ messages, handleSubmit, inputDisabled }) => {
     const [businessName, setBusinessName] = useState('');
     const [description, setDescription] = useState('');
-    const [problem, setProblem] = useState('');
     const [audience, setAudience] = useState('');
-    const [additionalInfo, setAdditionalInfo] = useState('');
     const messagesEndRef = useRef(null);
 
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      const answer = `Your business "${businessName}" is described as "${description}". It solves the problem of "${problem}" and targets the following audience: "${audience}". You provided the following additional information "${audience}"`;
+      const answer = `Your business "${businessName}" is described as "${description}" and targets the following audience: "${audience}".`;
       handleSubmit(answer);
-      // Clear the form inputs if needed
       setBusinessName('');
       setDescription('');
-      setProblem('');
       setAudience('');
-      setAdditionalInfo('');
     };
 
     useEffect(() => {
@@ -273,8 +304,8 @@ const Chat = ({
     return (
       <div className="flex h-screen">
         <div className="flex-2 p-10 border-r space-y-16 border-gray-300 overflow-auto">
-          <h2 className="mt-4 text-3xl font-bold">Marketing Strategies for Tech Entrepreneurs</h2>
-          <p className="mt-4 text-m font-bold">Remember: the more specific you are, the better the recommendations!</p>
+          <h2 className="mt-4 text-3xl font-bold">Answer these 3 simple questions to get your strategies</h2>
+          <p className="mt-4 text-m font-bold">Remember: the more <b>specific</b> you are, the <b>better</b> the recommendations!</p>
           <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4 w-full max-w-lg mx-auto">
             <div>
               <label className="block mb-2">What is the name of your business?</label>
@@ -295,29 +326,11 @@ const Chat = ({
               />
             </div>
             <div>
-              <label className="block mb-2">What problem is your business solving?</label>
-              <input
-                type="text"
-                value={problem}
-                onChange={(e) => setProblem(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded"
-              />
-            </div>
-            <div>
               <label className="block mb-2">Who is your business selling its products to?</label>
               <input
                 type="text"
                 value={audience}
                 onChange={(e) => setAudience(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded"
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Any additional information?</label>
-              <input
-                type="text"
-                value={additionalInfo}
-                onChange={(e) => setAdditionalInfo(e.target.value)}
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
@@ -330,7 +343,7 @@ const Chat = ({
           <div className="flex flex-col space-y-4 flex-grow">
             {messages.map((msg, index) => (
               <div key={index} className="w-full max-w-md mx-auto">
-              <Message key={index} role={msg.role} text={msg.text} />
+                <Message key={index} role={msg.role} text={msg.text} />
               </div>
             ))}
             <div ref={messagesEndRef} />
@@ -339,6 +352,7 @@ const Chat = ({
       </div>
     );
   };
+
 
   return (
     <ChatComponent

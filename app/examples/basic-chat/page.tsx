@@ -1,14 +1,19 @@
 "use client";
 
 import React from "react";
-import styles from "./page.module.css"; // use simple styles for demonstration purposes
-import Chat from "../../components/chat";
+import LeftSidebar from "../../components/LeftSidebar";
+import Chat from "../../components/savechat";
 
 const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <Chat />
+    <main className="flex h-screen">
+      <div className="flex w-full">
+        <div className="w-1/6">
+          <LeftSidebar />
+        </div>
+        <div className="flex-3 w-4/6 p-10 overflow-auto h-full">
+          <Chat />
+        </div>
       </div>
     </main>
   );

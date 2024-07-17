@@ -18,13 +18,18 @@ const LeftSidebar = () => {
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="#" className="text-black block">
-                        Settings
+                    <Link href="http://localhost:3000/examples/market-rec" className="text-black block">
+                        Strategies
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="#" className="text-black block">
-                        Billing
+                    <Link href="http://localhost:3000/examples/case-studies" className="text-black block">
+                        Case Studies
+                    </Link>
+                </li>
+                <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
+                    <Link href="http://localhost:3000/examples/basic-chat" className="text-black block">
+                        Live Assistant
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
@@ -38,7 +43,7 @@ const LeftSidebar = () => {
                     <h2 className="mt-4 text-xl font-bold">Would you like to unlock full access to Silithius?</h2>
                 </div>
             <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-sky-200 w-64 mx-auto">
-                <Link href="https://waitforit.me/signup/df364e28" className="text-black block">
+                    <Link href="https://forms.gle/RheqoNfrWo3997rv7" className="text-black block">
                     Join the wailist!
                 </Link>
             </li>
