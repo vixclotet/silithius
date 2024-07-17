@@ -18,17 +18,17 @@ const LeftSidebar = () => {
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="http://localhost:3000/examples/market-rec" className="text-black block">
+                    <Link href="https://www.silithius.com/examples/market-rec" className="text-black block">
                         Strategies
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="http://localhost:3000/examples/case-studies" className="text-black block">
+                    <Link href="https://www.silithius.com/examples/case-studies" className="text-black block">
                         Case Studies
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="http://localhost:3000/examples/basic-chat" className="text-black block">
+                    <Link href="https://www.silithius.com/examples/basic-chat" className="text-black block">
                         Live Assistant
                     </Link>
                 </li>
