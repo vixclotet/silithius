@@ -28,7 +28,7 @@ const LeftSidebar = () => {
                     </Link>
                 </li>
                 <li className="transition ease-in-out duration-300 hover:bg-orange-200 p-2 rounded-full text-center bg-gray-100 w-32 mx-auto">
-                    <Link href="/examples/tech-stack" className="text-black block">
+                    <Link href="https://www.silithius.com/examples/tech-stack" className="text-black block">
                         Tech Stacks
                     </Link>
                 </li>
